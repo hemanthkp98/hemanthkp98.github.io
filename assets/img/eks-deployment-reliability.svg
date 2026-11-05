@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 314" role="img" aria-label="Placeholder diagram: EKS deployment flow">
+<style>.bg{fill:#f4f2ee}.box{fill:#fbf9f6;stroke:#c0603e;stroke-width:2}.line{stroke:#c0603e;stroke-width:2;fill:none}.head{fill:#c0603e}.t{fill:#1a1917;font:600 21px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;text-anchor:middle}.s{fill:#5f5c56;font:400 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;text-anchor:middle}.note{fill:#5f5c56;font:400 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}@media (prefers-color-scheme:dark){.bg{fill:#1a1917}.box{fill:#161513;stroke:#e58d68}.line{stroke:#e58d68}.head{fill:#e58d68}.t{fill:#f4f2ee}.s,.note{fill:#b0aca4}}</style>
+<rect class="bg" width="720" height="314"/>
+<text class="note" x="24" y="34">Placeholder diagram. Replace with your own.</text>
+<rect class="box" x="24" y="56" width="204" height="84" rx="6"/><text class="t" x="126" y="92">Git commit</text><text class="s" x="126" y="118">code review</text>
+<rect class="box" x="258" y="56" width="204" height="84" rx="6"/><text class="t" x="360" y="92">Image build</text><text class="s" x="360" y="118">push to registry</text>
+<rect class="box" x="492" y="56" width="204" height="84" rx="6"/><text class="t" x="594" y="92">Helm chart</text><text class="s" x="594" y="118">versioned release</text>
+<rect class="box" x="492" y="206" width="204" height="84" rx="6"/><text class="t" x="594" y="242">Amazon EKS</text><text class="s" x="594" y="268">hardened cluster</text>
+<rect class="box" x="258" y="206" width="204" height="84" rx="6"/><text class="t" x="360" y="242">Progressive rollout</text><text class="s" x="360" y="268">staged traffic</text>
+<rect class="box" x="24" y="206" width="204" height="84" rx="6"/><text class="t" x="126" y="242">Monitoring</text><text class="s" x="126" y="268">metrics and alerts</text>
+<path class="line" d="M228 98h20"/><path class="head" d="M248 92l10 6-10 6z"/>
+<path class="line" d="M462 98h20"/><path class="head" d="M482 92l10 6-10 6z"/>
+<path class="line" d="M594 140v56"/><path class="head" d="M588 196l6 10 6-10z"/>
+<path class="line" d="M492 248h-20"/><path class="head" d="M472 242l-10 6 10 6z"/>
+<path class="line" d="M258 248h-20"/><path class="head" d="M238 242l-10 6 10 6z"/>
+</svg>

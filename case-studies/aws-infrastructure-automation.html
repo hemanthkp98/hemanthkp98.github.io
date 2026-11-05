@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AWS Infrastructure Automation | Hemanth K P</title>
+  <meta name="description" content="How I replaced manual AWS provisioning for a SaaS client with Terraform modules, a multi-environment setup, remote state, and CI/CD.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hemanth K P">
+  <meta property="og:title" content="AWS Infrastructure Automation | Hemanth K P">
+  <meta property="og:description" content="Manual provisioning and inconsistent environments replaced with Terraform modules, remote state, and CI/CD.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16a8 8 0 0 0 0-16z" fill="currentColor"/></symbol>
+  </svg>
+
+  <nav class="nav" aria-label="Main">
+    <div class="nav-pill">
+      <a class="nav-logo" href="../index.html" aria-label="Hemanth K P, home">H</a>
+      <a class="nav-link" href="../index.html#work">Work</a>
+      <a class="nav-link" href="../index.html#services">Services</a>
+      <button class="theme-toggle" type="button" aria-label="Dark theme"><svg class="icon" aria-hidden="true"><use href="#i-theme"></use></svg></button>
+      <a class="nav-link nav-book" href="https://calendly.com/hemanthkp98/15min" target="_blank" rel="noopener">Book a call</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <a class="back" href="../index.html">&larr; Back to home</a>
+    <main>
+      <article>
+        <header class="article-head">
+          <p class="label">Case study</p>
+          <h1>AWS Infrastructure Automation</h1>
+          <ul class="meta">
+            <li>Stack: Terraform, AWS, CI/CD</li>
+            <li>Duration: 2 months</li>
+            <li>Role: Contract AWS &amp; DevOps engineer</li>
+          </ul>
+        </header>
+
+        <section aria-labelledby="context">
+          <h2 id="context">Context</h2>
+          <p>A SaaS client running its product on AWS. Infrastructure had been built by hand as the product grew, and the people who built it were also the ones shipping features.</p>
+        </section>
+
+        <section aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <p>New resources were provisioned manually, so every environment was slightly different. Changes that worked in staging could fail in production, and nobody could say with confidence what was actually running without checking the console.</p>
+        </section>
+
+        <section aria-labelledby="what-i-did">
+          <h2 id="what-i-did">What I did</h2>
+          <ul>
+            <li>Brought existing AWS resources under Terraform so the code matched what was running.</li>
+            <li>Wrote reusable Terraform modules for the core building blocks: networking, compute, data stores, and IAM.</li>
+            <li>Set up dev, staging, and production from the same modules, with differences limited to per-environment variables.</li>
+            <li>Moved state to a remote S3 backend with locking, keeping state separate for each environment.</li>
+            <li>Integrated Terraform with CI/CD: plan on every pull request, apply after review and merge.</li>
+            <li>Documented the module structure and the change process so the team could run it without me.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="architecture">
+          <h2 id="architecture">Architecture</h2>
+          <figure>
+            <img src="../assets/img/aws-infrastructure-automation.svg" width="720" height="314" loading="lazy" alt="Flow diagram: a pull request triggers a CI pipeline that plans and applies shared Terraform modules, using locked remote state in S3, to the dev, staging, and production environments, with a scheduled plan checking for drift.">
+          </figure>
+        </section>
+
+        <section aria-labelledby="result">
+          <h2 id="result">Result</h2>
+          <p>Provisioning became faster, environments became repeatable, and drift dropped because changes now went through code review.</p>
+          <ul>
+            <li>Time to provision a new environment: half a day before, 20 to 40 minutes after.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="stack">
+          <h2 id="stack">Stack used</h2>
+          <ul class="chips">
+            <li>Terraform</li>
+            <li>AWS</li>
+            <li>S3 remote state</li>
+            <li>IAM</li>
+            <li>CI/CD</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <div class="wrap">
+    <footer class="closing closing-case">
+      <div class="closing-body">
+        <h2>Have a similar problem? <span class="accent">Book a 15-min call.</span></h2>
+        <div class="closing-actions">
+          <a class="button" href="https://calendly.com/hemanthkp98/15min" target="_blank" rel="noopener">Book a 15-min call</a>
+        </div>
+        <div class="footer-row label">
+          <p>© 2026 Hemanth K P</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
